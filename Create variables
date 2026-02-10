@@ -1,0 +1,18 @@
+# Create variables
+fullname = "Japhet Olivares"
+age = 20
+height = 1.70
+currently_working = False
+
+# Display values and their data types
+print("Fullname:", fullname)
+print("Data type:", type(fullname))
+
+print("Age:", age)
+print("Data type:", type(age))
+
+print("Height in meters:", height)
+print("Data type:", type(height))
+
+print("Currently working?:", currently_working)
+print("Data type:", type(currently_working))
