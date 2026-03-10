@@ -1,0 +1,61 @@
+
+
+cart = {}
+
+def add_item():
+    name = input("Enter item name: ")
+    price = float(input("Enter item price: "))
+    quantity = int(input("Enter quantity: "))
+
+    cart[name] = {"price": price, "quantity": quantity}
+    print(name, "added to cart.\n")
+
+
+def remove_item():
+    name = input("Enter item name to remove: ")
+    if name in cart:
+        del cart[name]
+        print(name, "removed from cart.\n")
+    else:
+        print("Item not found.\n")
+
+
+def view_cart():
+    total = 0
+    print("\n--- Shopping Cart ---")
+
+    if not cart:
+        print("Cart is empty.")
+        return
+
+    for item, info in cart.items():
+        price = info["price"]
+        quantity = info["quantity"]
+        subtotal = price * quantity
+        total += subtotal
+
+        print(f"{item} - ₱{price} x {quantity} = ₱{subtotal}")
+
+    print("Total: ₱", total)
+    print()
+
+
+while True:
+    print("1. Add Item")
+    print("2. Remove Item")
+    print("3. View Cart")
+    print("4. Exit")
+
+    choice = input("Choose option: ")
+
+    if choice == "1":
+        add_item()
+    elif choice == "2":
+        remove_item()
+    elif choice == "3":
+        view_cart()
+    elif choice == "4":
+        print("Thank you for shopping!")
+        break
+    else:
+        print("Invalid choice.\n")
